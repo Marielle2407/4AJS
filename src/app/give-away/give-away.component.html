@@ -1,0 +1,24 @@
+    <h1>GiveAways by DalivaGames</h1>
+<div class="row m-2 p-2">
+<div  *ngFor="let gif of gifs" class="col-md-4 mb-4 h-100">
+  <div class="card">
+  <img src="{{gif.thumbnail}}" class="card-img-top" alt="giveaway of {{gif.title}}">
+
+  <div class="card-body">
+
+    <h5 class="card-title">{{gif.title }}</h5>
+
+    <p class="card-text">
+      {{ gif.short_description }}
+    </p>
+
+    <div>
+      <strong>Clés restantes :</strong> {{ gif.keys_left }}
+    </div>
+
+    <a href="{{gif.giveaway_url}}" class="btn btn-primary">Obtenir la clé</a>
+
+  </div>
+         </div>
+</div>
+</div>

@@ -1,0 +1,63 @@
+<div class="container">
+<div class="visually-hidden">page de details lié au  jeu  : {{game.title}}</div>
+  <div class="row">
+
+    <div class="col-md-8">
+
+      <h1>{{ game.title }}</h1>
+
+      <img src="{{game.thumbnail}}" class="img-fluid" alt="image du  jeu {{game.title}}" >
+
+      <p>
+        {{ game.short_description }}
+      </p>
+
+      <p  [innerHTML]="game.description">
+
+      </p>
+
+      <a class="btn btn-primary" href="{{game.game_url}}" aria>Jouer</a>
+
+    </div>
+
+    <div class="col-md-4">
+
+      <h4>Informations</h4>
+
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Genre:</strong> {{ game.genre }}
+        </li>
+        <li class="list-group-item">
+          <strong>Plateforme:</strong> {{ game.platform }}
+        </li>
+        <li class="list-group-item">
+          <strong>Éditeur:</strong> {{ game.publisher }}
+        </li>
+        <li class="list-group-item">
+          <strong>Date de sortie:</strong> {{ game.release_date}}
+        </li>
+        <li class="list-group-item">
+          <strong>Platform:</strong> {{ game.platform}}
+        </li>
+        <li class="list-group-item">
+          <strong>Status:</strong> {{ game.status}}
+        </li> <li class="list-group-item">
+        <strong>Minimun Requis:</strong> <span *ngIf="game.minimum_system_requirements.os">{{game.minimum_system_requirements.os}}</span><br>
+         <span *ngIf="game.minimum_system_requirements.processor">{{game.minimum_system_requirements.processor}}</span>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+
+  <h4>Captures d'écran</h4>
+
+  <div class="row">
+    <div *ngFor="let screenshot of game.screenshots" class="col-md-3">
+      <img src="{{screenshot.image}}" class="img-fluid" alt="screenshot de {{game.title}}" >
+    </div>
+  </div>
+
+</div>

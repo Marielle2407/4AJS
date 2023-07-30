@@ -1,0 +1,11 @@
+{
+  "/api/*": {
+    "target": "https://mmo-games.p.rapidapi.com/games",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
